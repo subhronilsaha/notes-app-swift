@@ -13,7 +13,7 @@ class DetailsViewController: UIViewController {
     var currentNote = Note()
     
     @IBOutlet var noteTitle : UILabel?
-    @IBOutlet var noteDesc : UILabel?
+    @IBOutlet var noteDesc : UITextView?
     @IBOutlet var noteImage : UIImageView?
     
     override func viewDidLoad() {
