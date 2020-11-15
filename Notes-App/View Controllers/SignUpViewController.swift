@@ -23,7 +23,7 @@ class SignUpViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    //MARK:- Sign Up Button
+    //MARK:- Field Validation
     func isValidEmail(_ email: String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
 
@@ -33,6 +33,11 @@ class SignUpViewController: UIViewController {
     
     //MARK:- Sign Up Button
     @IBAction func signUpButton() {
+        
+        if let email = emailField?.text {
+            print(isValidEmail(email))
+            if !isValidEmail(email) { return }
+        }
         
         realm.beginWrite()
 
